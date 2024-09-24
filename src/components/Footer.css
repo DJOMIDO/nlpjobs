@@ -1,0 +1,48 @@
+/* scr/components/Footer.css */
+
+.footer {
+    background-color: #575757;
+    padding         : 2rem 0;
+    text-align      : center;
+    border-top      : 1px solid #ddd;
+}
+
+.footer-content {
+    max-width      : 75rem;
+    margin         : 0 auto;
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center
+}
+
+.footer-logo-wrapper {
+    margin-bottom: 1rem;
+}
+
+.footer-logo-wrapper img {
+    width : 7rem;
+    filter: brightness(0) invert(1);
+}
+
+.footer p {
+    margin     : 0;
+    font-size  : 1rem;
+    font-weight: 600;
+    color      : #fdfdfd;
+}
+
+.footer-links {
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    margin         : 0 1rem;
+    font-size      : 0.9rem;
+    color          : #fdfdfd;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

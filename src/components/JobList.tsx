@@ -1,10 +1,9 @@
 // src/components/JobList.tsx
 
 import React, { useEffect, useState } from "react";
-import JobCard from "./JobCard"; // 引入 JobCard 组件
-import "./JobList.css"; // 引入样式
+import JobCard from "./JobCard";
+import "./JobList.css"; 
 
-// 定义 Job 类型
 interface Job {
   id: string;
   jobType: string;
@@ -33,29 +32,27 @@ interface Job {
 }
 
 const JobList: React.FC = () => {
-  const [jobs, setJobs] = useState<Job[]>([]); // 显式定义 jobs 为 Job 数组类型
+  const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // 从 json-server 获取所有工作数据
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await fetch("http://localhost:3001/jobs"); // 使用统一的 /jobs 端点
+        const response = await fetch("http://localhost:3001/jobs");
         const data = await response.json();
-        setJobs(data); // 设置获取到的工作数据
-        setLoading(false); // 数据加载完毕
+        setJobs(data);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching jobs:", error);
-        setLoading(false); // 如果发生错误，仍然结束加载状态
+        setLoading(false);
       }
     };
 
     fetchJobs();
   }, []);
 
-  // 如果数据正在加载，显示加载状态
   if (loading) {
-    return <div>Loading...</div>; // 可以用 Spinner 组件替换
+    return <div>Loading...</div>;
   }
 
   return (
@@ -64,7 +61,7 @@ const JobList: React.FC = () => {
         <JobCard
           key={job.id}
           job={job}
-          onViewDetails={() => window.open(`/job/${job.id}`, "_blank")} // 点击时在新标签页中打开详情
+          onViewDetails={() => window.open(`/job/${job.id}`, "_blank")}
         />
       ))}
     </div>
