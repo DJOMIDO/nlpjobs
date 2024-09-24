@@ -1,12 +1,43 @@
 /* src/components/JobList.css */
 
+.job-list-container {
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    background-color: #EEEEEE;
+    padding         : 1rem 0;
+    position        : relative;
+}
+
+.filter-btn-container {
+    position: absolute;
+    margin  : 1.25rem 0;
+    right   : 5.5rem;
+}
+
+.filter-btn {
+    background   : none;
+    border       : solid 1px #5356FF;
+    border-radius: .25rem;
+    cursor       : pointer;
+    display      : flex;
+    align-items  : center;
+}
+
+.filter-btn .material-symbols-outlined {
+    color: #5356FF;
+}
+
+.filter-btn:hover .material-symbols-outlined {
+    color: #87A2FF;
+}
+
 .job-list {
     display              : grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap             : .5rem;
-    padding              : 1rem 5rem;
+    padding              : 5rem;
     justify-items        : center;
-    background-color: #EEEEEE;
 }
 
 @media (max-width: 1024px) {
