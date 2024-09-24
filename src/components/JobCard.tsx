@@ -3,6 +3,7 @@
 import React from "react";
 import { Job } from "../types/jobTypes";
 import "./JobCard.css";
+import { formatSalary } from "../utils/formatSalary";
 
 interface JobCardProps {
   job: Job;
@@ -10,13 +11,10 @@ interface JobCardProps {
 }
 
 const JobCard: React.FC<JobCardProps> = ({ job, onViewDetails }) => {
-  // 简短描述显示
   const shortDescription =
     job.description.length > 100
       ? job.description.substring(0, 100) + "..."
       : job.description;
-
-  const formatSalary = (salary: number) => salary.toLocaleString();
 
   return (
     <div className="job-card">

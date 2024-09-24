@@ -32,16 +32,6 @@ const Navbar = () => {
               jobs
             </NavLink>
           </div>
-          <div className="navlin-wrapper">
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "NavLink active" : "NavLink"
-              }
-              to="/about"
-            >
-              about
-            </NavLink>
-          </div>
         </div>
       </div>
     </nav>

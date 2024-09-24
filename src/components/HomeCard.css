@@ -3,6 +3,7 @@
 .home-card-container {
     padding   : 1rem;
     text-align: center;
+    background-color: #EEEEEE;
 }
 
 .home-title {
@@ -38,7 +39,7 @@
 
 .view-all-btn {
     padding         : 0.75rem 1.5rem;
-    background-color: #ff3131;
+    background-color: #7E8EF1;
     color           : white;
     border          : none;
     border-radius   : 0.25rem;
@@ -48,5 +49,5 @@
 }
 
 .view-all-btn:hover {
-    background-color: #e02626;
+    background-color: #87A2FF;
 }

@@ -5,7 +5,7 @@ import "./Hero.css";
 const Hero = ({
   title = "Unlock Your Future in NLP",
   subtitle =
-    "Start your journey in natural language processing with the top companies.",
+    "Start your journey in natural language processing from here.",
 }) => {
   return (
     <section className="hero">
