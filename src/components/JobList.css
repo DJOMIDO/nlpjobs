@@ -1,0 +1,26 @@
+/* src/components/JobList.css */
+
+.job-list {
+    display              : grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 每行 4 列 */
+    grid-gap             : .5rem;
+    /* 卡片之间的间距 */
+    padding              : 1rem 5rem;
+    justify-items        : center;
+    /* 卡片居中对齐 */
+}
+
+@media (max-width: 1024px) {
+    .job-list {
+        grid-template-columns: repeat(2, 1fr);
+        /* 在中等屏幕下调整为两列 */
+    }
+}
+
+@media (max-width: 768px) {
+    .job-list {
+        grid-template-columns: 1fr;
+        /* 在小屏幕下调整为单列 */
+    }
+}

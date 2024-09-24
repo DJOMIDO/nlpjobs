@@ -1,0 +1,625 @@
+{
+    "jobs": [
+        {
+            "id": "1",
+            "jobType": "Full-time",
+            "title": "Senior NLP Engineer",
+            "description": "Lead the development of cutting-edge NLP models for large-scale datasets. Collaborate with data scientists and software engineers to integrate NLP algorithms into existing systems. Responsible for improving model performance, scalability, and real-time processing capabilities.",
+            "salaryRange": {
+                "min": 100000,
+                "max": 130000,
+                "unit": "USD/year"
+            },
+            "location": {
+                "city": "San Francisco",
+                "state": "CA",
+                "country": "USA"
+            },
+            "company": "AI Innovations Inc.",
+            "postingDate": "2024-09-15",
+            "experienceRequired": "5+ years",
+            "skillsRequired": [
+                "Python",
+                "TensorFlow",
+                "BERT",
+                "GPT",
+                "Data Mining"
+            ],
+            "contact": {
+                "email": "hr@aiinnovations.com",
+                "phone": "+1 (415) 555-1234"
+            },
+            "applicationLink": "https://aiinnovations.com/careers/12345",
+            "urgent": true
+        },
+        {
+            "id": "2",
+            "jobType": "Remote",
+            "title": "NLP Research Scientist",
+            "description": "Focus on advancing state-of-the-art research in NLP for applications such as semantic parsing, machine translation, and speech recognition. Publish research papers and contribute to open-source projects while working remotely.",
+            "salaryRange": {
+                "min": 90000,
+                "max": 110000,
+                "unit": "EUR/year"
+            },
+            "location": {
+                "city": "Berlin",
+                "state": "",
+                "country": "Germany"
+            },
+            "company": "LanguageTech Labs",
+            "postingDate": "2024-08-01",
+            "experienceRequired": "3+ years",
+            "skillsRequired": [
+                "Spacy",
+                "PyTorch",
+                "Deep Learning",
+                "NLP Research"
+            ],
+            "contact": {
+                "email": "careers@languagetech.com",
+                "phone": "+49 30 123456"
+            },
+            "applicationLink": "https://languagetechlabs.com/jobs/98765",
+            "urgent": false
+        },
+        {
+            "id": "3",
+            "jobType": "Full-time",
+            "title": "Machine Learning Engineer (NLP)",
+            "description": "Work on building and scaling NLP pipelines for text classification, named entity recognition, and information retrieval systems. Focus on improving data pipeline efficiency and optimizing real-time NLP model deployment.",
+            "salaryRange": {
+                "min": 80000,
+                "max": 100000,
+                "unit": "GBP/year"
+            },
+            "location": {
+                "city": "London",
+                "state": "",
+                "country": "United Kingdom"
+            },
+            "company": "Tech Solutions Ltd.",
+            "postingDate": "2024-07-10",
+            "experienceRequired": "4+ years",
+            "skillsRequired": [
+                "Python",
+                "Hugging Face",
+                "NLP",
+                "Text Mining"
+            ],
+            "contact": {
+                "email": "jobs@techsolutions.co.uk",
+                "phone": "+44 20 7946 1234"
+            },
+            "applicationLink": "https://techsolutions.co.uk/careers/ml-nlp",
+            "urgent": true
+        },
+        {
+            "id": "4",
+            "jobType": "Hybrid",
+            "title": "NLP Developer",
+            "description": "Develop NLP models for chatbot systems and customer service automation. Collaborate with the AI and product teams to continuously improve conversational AI solutions and ensure seamless integration with customer databases.",
+            "salaryRange": {
+                "min": 70000,
+                "max": 95000,
+                "unit": "SGD/year"
+            },
+            "location": {
+                "city": "Singapore",
+                "state": "",
+                "country": "Singapore"
+            },
+            "company": "TechGPT Pte. Ltd.",
+            "postingDate": "2024-06-20",
+            "experienceRequired": "2+ years",
+            "skillsRequired": [
+                "Python",
+                "Spacy",
+                "Dialogflow",
+                "Chatbots"
+            ],
+            "contact": {
+                "email": "hiring@techgpt.com.sg",
+                "phone": "+65 6543 2100"
+            },
+            "applicationLink": "https://techgpt.sg/jobs/nlp",
+            "urgent": false
+        },
+        {
+            "id": "5",
+            "jobType": "Full-time",
+            "title": "Lead Data Scientist (NLP)",
+            "description": "Lead a team of NLP engineers and data scientists to design and implement NLP algorithms for large-scale machine translation and text analysis. The role requires managing cross-functional teams and delivering high-quality solutions to improve natural language understanding across multiple languages.",
+            "salaryRange": {
+                "min": 120000,
+                "max": 150000,
+                "unit": "USD/year"
+            },
+            "location": {
+                "city": "New York",
+                "state": "NY",
+                "country": "USA"
+            },
+            "company": "Global AI Corp.",
+            "postingDate": "2024-05-15",
+            "experienceRequired": "7+ years",
+            "skillsRequired": [
+                "Python",
+                "TensorFlow",
+                "PyTorch",
+                "Machine Translation"
+            ],
+            "contact": {
+                "email": "talent@globalai.com",
+                "phone": "+1 (212) 555-9876"
+            },
+            "applicationLink": "https://globalai.com/jobs/lead-nlp",
+            "urgent": true
+        },
+        {
+            "id": "6",
+            "jobType": "Remote",
+            "title": "NLP Engineer",
+            "description": "Develop and optimize NLP models for entity recognition and document classification. Focus on creating efficient pipelines for processing unstructured text data in real-time applications. Work remotely with flexible hours.",
+            "salaryRange": {
+                "min": 85000,
+                "max": 105000,
+                "unit": "EUR/year"
+            },
+            "location": {
+                "city": "Paris",
+                "state": "",
+                "country": "France"
+            },
+            "company": "AI Flow Systems",
+            "postingDate": "2024-04-01",
+            "experienceRequired": "4+ years",
+            "skillsRequired": [
+                "BERT",
+                "GPT",
+                "NLP Pipelines",
+                "Entity Recognition"
+            ],
+            "contact": {
+                "email": "jobs@aiflow.com",
+                "phone": "+33 1 1234 5678"
+            },
+            "applicationLink": "https://aiflow.com/careers/78910",
+            "urgent": false
+        },
+        {
+            "id": "7",
+            "jobType": "Full-time",
+            "title": "NLP Research Engineer",
+            "description": "Conduct cutting-edge research in NLP, focusing on sentiment analysis, question answering, and conversational AI. Collaborate with academia and industry partners to publish research and implement findings in commercial applications.",
+            "salaryRange": {
+                "min": 110000,
+                "max": 135000,
+                "unit": "USD/year"
+            },
+            "location": {
+                "city": "Boston",
+                "state": "MA",
+                "country": "USA"
+            },
+            "company": "DeepNLP Corp.",
+            "postingDate": "2024-08-05",
+            "experienceRequired": "5+ years",
+            "skillsRequired": [
+                "NLP Research",
+                "TensorFlow",
+                "BERT",
+                "Sentiment Analysis"
+            ],
+            "contact": {
+                "email": "recruit@deepnlp.com",
+                "phone": "+1 (617) 555-1212"
+            },
+            "applicationLink": "https://deepnlp.com/jobs/research",
+            "urgent": true
+        },
+        {
+            "id": "8",
+            "jobType": "Full-time",
+            "title": "AI Engineer (NLP)",
+            "description": "Develop AI-driven NLP applications for healthcare and clinical trials. Work on information extraction and entity recognition models to help automate the analysis of medical reports. Collaborate with healthcare experts and AI engineers.",
+            "salaryRange": {
+                "min": 95000,
+                "max": 115000,
+                "unit": "USD/year"
+            },
+            "location": {
+                "city": "Austin",
+                "state": "TX",
+                "country": "USA"
+            },
+            "company": "MediAI Solutions",
+            "postingDate": "2024-03-10",
+            "experienceRequired": "3+ years",
+            "skillsRequired": [
+                "NLP",
+                "Healthcare",
+                "Entity Recognition",
+                "Information Extraction"
+            ],
+            "contact": {
+                "email": "jobs@mediaisolutions.com",
+                "phone": "+1 (512) 555-7890"
+            },
+            "applicationLink": "https://mediaisolutions.com/careers/ai-nlp",
+            "urgent": false
+        },
+        {
+            "id": "9",
+            "jobType": "Remote",
+            "title": "NLP Specialist",
+            "description": "Specialize in building and deploying NLP models for legal text processing. Focus on contract analysis, clause identification, and legal entity recognition. Work with legal experts to ensure the accuracy and effectiveness of the models.",
+            "salaryRange": {
+                "min": 85000,
+                "max": 110000,
+                "unit": "GBP/year"
+            },
+            "location": {
+                "city": "Manchester",
+                "state": "",
+                "country": "United Kingdom"
+            },
+            "company": "LegalAI Ltd.",
+            "postingDate": "2024-06-30",
+            "experienceRequired": "4+ years",
+            "skillsRequired": [
+                "Python",
+                "Hugging Face",
+                "NLP",
+                "Legal Tech"
+            ],
+            "contact": {
+                "email": "careers@legalai.co.uk",
+                "phone": "+44 161 555 4321"
+            },
+            "applicationLink": "https://legalai.co.uk/jobs/nlp-specialist",
+            "urgent": false
+        },
+        {
+            "id": "10",
+            "jobType": "Hybrid",
+            "title": "Data Scientist (NLP)",
+            "description": "Work on NLP solutions for financial institutions, developing models for risk assessment, fraud detection, and financial forecasting. Collaborate with data engineers and business analysts to deploy scalable machine learning models in production.",
+            "salaryRange": {
+                "min": 90000,
+                "max": 125000,
+                "unit": "AUD/year"
+            },
+            "location": {
+                "city": "Sydney",
+                "state": "",
+                "country": "Australia"
+            },
+            "company": "FinTech AI Pty Ltd",
+            "postingDate": "2024-09-05",
+            "experienceRequired": "6+ years",
+            "skillsRequired": [
+                "Python",
+                "NLP",
+                "Financial Modeling",
+                "Data Science"
+            ],
+            "contact": {
+                "email": "jobs@fintechai.com.au",
+                "phone": "+61 2 1234 5678"
+            },
+            "applicationLink": "https://fintechai.com.au/jobs/nlp-datascientist",
+            "urgent": true
+        },
+        {
+            "id": "11",
+            "jobType": "Full-time",
+            "title": "NLP Engineer (Japanese)",
+            "description": "Focus on building and localizing NLP models for Japanese language processing, including text generation, entity recognition, and speech-to-text models. Work closely with linguists to ensure cultural and linguistic accuracy in the models.",
+            "salaryRange": {
+                "min": 7500000,
+                "max": 9500000,
+                "unit": "JPY/year"
+            },
+            "location": {
+                "city": "Tokyo",
+                "state": "",
+                "country": "Japan"
+            },
+            "company": "TokyoAI Innovations",
+            "postingDate": "2024-04-20",
+            "experienceRequired": "4+ years",
+            "skillsRequired": [
+                "NLP",
+                "Japanese Language",
+                "Entity Recognition",
+                "Text Generation"
+            ],
+            "contact": {
+                "email": "recruit@tokyoai.co.jp",
+                "phone": "+81 3 1234 5678"
+            },
+            "applicationLink": "https://tokyoai.co.jp/careers/nlp-japan",
+            "urgent": false
+        },
+        {
+            "id": "12",
+            "jobType": "Full-time",
+            "title": "Lead AI Engineer (NLP)",
+            "description": "Lead the AI team in developing innovative NLP applications for social media analysis and brand reputation management. Focus on sentiment analysis, language modeling, and real-time trend detection.",
+            "salaryRange": {
+                "min": 110000,
+                "max": 140000,
+                "unit": "USD/year"
+            },
+            "location": {
+                "city": "Los Angeles",
+                "state": "CA",
+                "country": "USA"
+            },
+            "company": "SocialAI Technologies",
+            "postingDate": "2024-05-25",
+            "experienceRequired": "6+ years",
+            "skillsRequired": [
+                "NLP",
+                "Sentiment Analysis",
+                "Python",
+                "Real-time Systems"
+            ],
+            "contact": {
+                "email": "jobs@socialai.com",
+                "phone": "+1 (310) 555-6789"
+            },
+            "applicationLink": "https://socialai.com/careers/lead-nlp",
+            "urgent": false
+        },
+        {
+            "id": "13",
+            "jobType": "Remote",
+            "title": "NLP Engineer",
+            "description": "Build and deploy NLP models for educational content generation and automatic grading systems. Collaborate with educators to develop accurate models that enhance personalized learning experiences.",
+            "salaryRange": {
+                "min": 85000,
+                "max": 100000,
+                "unit": "USD/year"
+            },
+            "location": {
+                "city": "Remote",
+                "state": "",
+                "country": "USA"
+            },
+            "company": "EduTech Labs",
+            "postingDate": "2024-07-01",
+            "experienceRequired": "3+ years",
+            "skillsRequired": [
+                "NLP",
+                "GPT",
+                "Text Generation",
+                "Education"
+            ],
+            "contact": {
+                "email": "careers@edutechlabs.com",
+                "phone": "+1 (555) 555-2020"
+            },
+            "applicationLink": "https://edutechlabs.com/jobs/nlp",
+            "urgent": false
+        },
+        {
+            "id": "14",
+            "jobType": "Full-time",
+            "title": "NLP Data Scientist",
+            "description": "Analyze large datasets of unstructured text to create NLP models that improve customer insights and predictive analytics. Work on various NLP applications including customer support automation and feedback sentiment analysis.",
+            "salaryRange": {
+                "min": 95000,
+                "max": 120000,
+                "unit": "USD/year"
+            },
+            "location": {
+                "city": "Toronto",
+                "state": "ON",
+                "country": "Canada"
+            },
+            "company": "InsightAI",
+            "postingDate": "2024-06-15",
+            "experienceRequired": "5+ years",
+            "skillsRequired": [
+                "NLP",
+                "Data Science",
+                "Sentiment Analysis",
+                "Predictive Analytics"
+            ],
+            "contact": {
+                "email": "jobs@insightai.com",
+                "phone": "+1 (416) 555-2525"
+            },
+            "applicationLink": "https://insightai.com/jobs/datascientist-nlp",
+            "urgent": true
+        },
+        {
+            "id": "15",
+            "jobType": "Full-time",
+            "title": "NLP Engineer",
+            "description": "Develop NLP solutions for automated speech recognition (ASR) systems, focusing on real-time processing and multilingual support. Work closely with voice and speech experts to create accurate and efficient models.",
+            "salaryRange": {
+                "min": 100000,
+                "max": 125000,
+                "unit": "USD/year"
+            },
+            "location": {
+                "city": "Seattle",
+                "state": "WA",
+                "country": "USA"
+            },
+            "company": "VoiceAI Innovations",
+            "postingDate": "2024-08-12",
+            "experienceRequired": "4+ years",
+            "skillsRequired": [
+                "ASR",
+                "NLP",
+                "Real-time Processing",
+                "Multilingual Support"
+            ],
+            "contact": {
+                "email": "jobs@voiceai.com",
+                "phone": "+1 (206) 555-7777"
+            },
+            "applicationLink": "https://voiceai.com/careers/nlp-engineer",
+            "urgent": true
+        },
+        {
+            "id": "16",
+            "jobType": "Hybrid",
+            "title": "NLP Engineer (Chinese)",
+            "description": "Focus on building NLP models for Chinese language processing. Work on text classification, sentiment analysis, and machine translation for large-scale business applications. Collaborate with linguists to ensure accurate model performance.",
+            "salaryRange": {
+                "min": 190000,
+                "max": 225000,
+                "unit": "CNY/year"
+            },
+            "location": {
+                "city": "Shanghai",
+                "state": "",
+                "country": "China"
+            },
+            "company": "AI Solutions Shanghai",
+            "postingDate": "2024-03-15",
+            "experienceRequired": "3+ years",
+            "skillsRequired": [
+                "NLP",
+                "Chinese Language",
+                "Text Classification",
+                "Translation"
+            ],
+            "contact": {
+                "email": "recruitment@aishanghai.com.cn",
+                "phone": "+86 21 1234 5678"
+            },
+            "applicationLink": "https://aishanghai.com.cn/careers/nlp-china",
+            "urgent": false
+        },
+        {
+            "id": "17",
+            "jobType": "Full-time",
+            "title": "NLP Engineer (Cantonese)",
+            "description": "Build and enhance NLP models for Cantonese language processing, focusing on language generation and sentiment analysis for the entertainment and media industries. Collaborate with linguists and product teams to deliver impactful solutions.",
+            "salaryRange": {
+                "min": 38000,
+                "max": 405000,
+                "unit": "CNY/year"
+            },
+            "location": {
+                "city": "Shenzhen",
+                "state": "",
+                "country": "China"
+            },
+            "company": "LinguaAI",
+            "postingDate": "2024-02-28",
+            "experienceRequired": "3+ years",
+            "skillsRequired": [
+                "NLP",
+                "Cantonese Language",
+                "Language Generation",
+                "Media"
+            ],
+            "contact": {
+                "email": "jobs@linguaai.com",
+                "phone": "+86 755 5555 6666"
+            },
+            "applicationLink": "https://linguaai.com/careers/nlp-cantonese",
+            "urgent": true
+        },
+        {
+            "id": "18",
+            "jobType": "Full-time",
+            "title": "NLP Data Scientist (French)",
+            "description": "Develop NLP applications focused on French language for business intelligence and customer sentiment analysis. Work on large datasets and collaborate with European clients to deliver customized NLP solutions.",
+            "salaryRange": {
+                "min": 85000,
+                "max": 105000,
+                "unit": "EUR/year"
+            },
+            "location": {
+                "city": "Brussels",
+                "state": "",
+                "country": "Belgium"
+            },
+            "company": "EuropeAI",
+            "postingDate": "2024-05-01",
+            "experienceRequired": "4+ years",
+            "skillsRequired": [
+                "NLP",
+                "French Language",
+                "Sentiment Analysis",
+                "Business Intelligence"
+            ],
+            "contact": {
+                "email": "hr@europeai.eu",
+                "phone": "+32 2 555 9999"
+            },
+            "applicationLink": "https://europeai.eu/careers/nlp-french",
+            "urgent": false
+        },
+        {
+            "id": "19",
+            "jobType": "Full-time",
+            "title": "NLP Specialist",
+            "description": "Work on improving NLP algorithms for social media analytics, focusing on real-time data processing, sentiment analysis, and topic modeling. Collaborate with data scientists and software developers to create impactful tools for brand monitoring.",
+            "salaryRange": {
+                "min": 100000,
+                "max": 120000,
+                "unit": "USD/year"
+            },
+            "location": {
+                "city": "Chicago",
+                "state": "IL",
+                "country": "USA"
+            },
+            "company": "SocialAI Analytics",
+            "postingDate": "2024-09-05",
+            "experienceRequired": "5+ years",
+            "skillsRequired": [
+                "Python",
+                "NLP",
+                "Topic Modeling",
+                "Real-time Processing"
+            ],
+            "contact": {
+                "email": "recruit@socialai.com",
+                "phone": "+1 (312) 555-1414"
+            },
+            "applicationLink": "https://socialai.com/careers/nlp-specialist",
+            "urgent": true
+        },
+        {
+            "id": "20",
+            "jobType": "Hybrid",
+            "title": "NLP Engineer",
+            "description": "Focus on building NLP models for automatic speech recognition (ASR) systems, working closely with linguists to ensure accurate transcription of various dialects. Develop machine learning pipelines for large-scale audio datasets.",
+            "salaryRange": {
+                "min": 95000,
+                "max": 120000,
+                "unit": "SGD/year"
+            },
+            "location": {
+                "city": "Singapore",
+                "state": "",
+                "country": "Singapore"
+            },
+            "company": "VoiceTech Pte. Ltd.",
+            "postingDate": "2024-06-30",
+            "experienceRequired": "3+ years",
+            "skillsRequired": [
+                "ASR",
+                "NLP",
+                "Multilingual Processing",
+                "Speech-to-Text"
+            ],
+            "contact": {
+                "email": "careers@voicetech.sg",
+                "phone": "+65 6789 1234"
+            },
+            "applicationLink": "https://voicetech.sg/jobs/nlp",
+            "urgent": false
+        }
+    ]
+}

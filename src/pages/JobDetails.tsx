@@ -1,0 +1,1 @@
+// src/pages/JobDetails.tsx

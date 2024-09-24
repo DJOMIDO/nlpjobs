@@ -1,0 +1,56 @@
+/* src/components/HomeCard.css */
+
+.home-card-container {
+    padding   : 1rem;
+    text-align: center;
+}
+
+.home-title {
+    font-size    : 1.8rem;
+    font-weight  : 600;
+    margin-bottom: 1.5rem;
+}
+
+.home-job-list {
+    display              : grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 每行 4 列 */
+    grid-gap             : .5rem;
+    /* 卡片之间的间距 */
+    padding              : 1rem 5rem;
+    justify-items        : center;
+    /* 卡片居中对齐 */
+}
+
+@media (max-width: 1024px) {
+    .home-job-list {
+        grid-template-columns: repeat(2, 1fr);
+        /* 在中等屏幕下调整为两列 */
+    }
+}
+
+@media (max-width: 768px) {
+    .home-job-list {
+        grid-template-columns: 1fr;
+        /* 在小屏幕下调整为单列 */
+    }
+}
+
+.view-all-btn-container {
+    text-align: center;
+    /* 按钮靠右对齐 */
+}
+
+.view-all-btn {
+    padding         : 0.75rem 1.5rem;
+    background-color: #007bff;
+    color           : white;
+    border          : none;
+    border-radius   : 0.25rem;
+    cursor          : pointer;
+    font-size       : 1rem;
+}
+
+.view-all-btn:hover {
+    background-color: #0056b3;
+}
