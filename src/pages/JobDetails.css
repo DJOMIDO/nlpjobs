@@ -1,1 +1,51 @@
-/* src/JobDetails.css */
+/* src/pages/JobDetails.css */
+
+.job-details-container {
+    display         : flex;
+    justify-content : center;
+    align-items     : flex-start;
+    padding         : 15rem;
+    margin          : 0 auto;
+    background-color: #f8f9fa;
+}
+
+.job-details {
+    max-width       : 50rem;
+    padding         : 2rem;
+    background-color: white;
+    border-radius   : 8px;
+    box-shadow      : 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-details-title {
+    font-size    : 2rem;
+    font-weight  : bold;
+    margin-bottom: 1rem;
+}
+
+.job-details-type,
+.job-details-description,
+.job-details-salary,
+.job-details-location,
+.job-details-experience,
+.job-details-skills,
+.job-details-company,
+.job-details-email,
+.job-details-tel {
+    font-size    : 1rem;
+    margin-bottom: 1rem;
+    line-height  : 1.5;
+}
+
+.job-details-description {
+    white-space: pre-line;
+}
+
+.job-details-salary {
+    font-weight: bold;
+    color      : #007bff;
+}
+
+.job-details-container {
+    flex-grow: 1;
+}
