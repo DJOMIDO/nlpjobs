@@ -6,7 +6,7 @@ import JobCard from "./JobCard";
 import Pagination from "rc-pagination";
 import "rc-pagination/assets/index.css";
 import "./JobList.css";
-import Filter from "./Filters";
+import SearchBar from "./SearchBar";
 
 const JobList: React.FC = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -15,7 +15,7 @@ const JobList: React.FC = () => {
     country?: string;
     city?: string;
     urgent?: boolean;
-    sortSalary?: "asc" | "desc";
+    keyword?: string;
   }>({});
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -58,13 +58,10 @@ const JobList: React.FC = () => {
       updatedJobs = updatedJobs.filter((job) => job.urgent === filters.urgent);
     }
 
-    if (filters.sortSalary === "asc") {
-      updatedJobs = updatedJobs.sort(
-        (a, b) => a.salaryRange.min - b.salaryRange.min
-      );
-    } else if (filters.sortSalary === "desc") {
-      updatedJobs = updatedJobs.sort(
-        (a, b) => b.salaryRange.min - a.salaryRange.min
+    if (filters.keyword) {
+      updatedJobs = updatedJobs.filter((job) =>
+        job.title.toLowerCase().includes((filters.keyword ?? "").toLowerCase()) ||
+        job.company?.toLowerCase().includes((filters.keyword ?? "").toLowerCase())
       );
     }
 
@@ -79,7 +76,7 @@ const JobList: React.FC = () => {
     country?: string;
     city?: string;
     urgent?: boolean;
-    sortSalary?: "asc" | "desc";
+    keyword?: string;
   }) => {
     setFilters((prevFilters) => ({ ...prevFilters, ...newFilters }));
   };
@@ -96,20 +93,20 @@ const JobList: React.FC = () => {
     setIsFilterVisible((prev) => !prev);
   };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const handleSearch = (query: string) => {
+    handleFilterChange({ keyword: query });
+  };
 
   return (
     <div className="job-list-container">
-      <div className="filter-btn-container">
-        <button className="filter-btn" onClick={toggleFilterVisibility}>
-          <span className="material-symbols-outlined">sort</span>
-        </button>
-      </div>
-      {isFilterVisible && (
-        <Filter jobs={jobs} onFilterChange={handleFilterChange} />
-      )}
+      <SearchBar
+        onSearch={handleSearch}
+        onToggleFilter={toggleFilterVisibility}
+        isFilterVisible={isFilterVisible}
+        jobs={jobs}
+        filters={filters}
+        onFilterChange={handleFilterChange}
+      />
       <div className="job-list">
         {currentJobs.map((job) => (
           <JobCard

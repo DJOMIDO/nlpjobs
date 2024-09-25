@@ -5,31 +5,8 @@
     flex-direction  : column;
     align-items     : center;
     background-color: #EEEEEE;
-    padding         : 1rem 0;
+    padding          : 3rem 0;
     position        : relative;
-}
-
-.filter-btn-container {
-    position: absolute;
-    margin  : 1.25rem 0;
-    right   : 5.5rem;
-}
-
-.filter-btn {
-    background   : none;
-    border       : solid 1px #5356FF;
-    border-radius: .25rem;
-    cursor       : pointer;
-    display      : flex;
-    align-items  : center;
-}
-
-.filter-btn .material-symbols-outlined {
-    color: #5356FF;
-}
-
-.filter-btn:hover .material-symbols-outlined {
-    color: #87A2FF;
 }
 
 .job-list {

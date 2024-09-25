@@ -35,7 +35,7 @@ const HomeCard: React.FC = () => {
   return (
     <div className="home-card-container" id="home-card-section">
       <h2 className="home-title">Most Urgent Jobs</h2>
-      <div className="home-job-list">
+      <div className="job-list">
         {urgentJobs.map((job) => (
           <JobCard key={job.id} job={job} onViewDetails={() => window.open(`/job/${job.id}`, "_blank")} />
         ))}
