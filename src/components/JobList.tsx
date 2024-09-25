@@ -61,7 +61,10 @@ const JobList: React.FC = () => {
     if (filters.keyword) {
       updatedJobs = updatedJobs.filter((job) =>
         job.title.toLowerCase().includes((filters.keyword ?? "").toLowerCase()) ||
-        job.company?.toLowerCase().includes((filters.keyword ?? "").toLowerCase())
+        job.company?.toLowerCase().includes((filters.keyword ?? "").toLowerCase()) ||
+        job.location.city.toLowerCase().includes((filters.keyword ?? "").toLowerCase()) ||
+        job.location.country.toLowerCase().includes((filters.keyword ?? "").toLowerCase()) ||
+        job.description.toLowerCase().includes((filters.keyword ?? "").toLowerCase())
       );
     }
 
