@@ -1,50 +1,110 @@
-# React + TypeScript + Vite
+# 🧠 NLP Jobs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for browsing and managing NLP-related job listings.  
+Built with **React + TypeScript + Vite**, and powered by **json-server** for mock backend support.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔎 Search NLP job opportunities by keyword
+- 🎯 Filter jobs by country, city, salary, and job type
+- 📄 View full job details in a separate page
+- 📦 Powered by `json-server` as a mock REST API
+- ⚡ Fast and modular frontend using React + TypeScript
+- 💅 Clean and responsive UI
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🖼️ Screenshots
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 🏠 Home Page
+Showcases a hero banner and the most urgent job listings.
+
+![Home](./screenshots/home.png)
+
+---
+
+### 💼 Jobs Page
+Paginated view of all available NLP jobs with integrated search and filter components.
+
+![Jobs](./screenshots/jobs.png)
+
+---
+
+### 🔍 Search Functionality
+Real-time job search by typing keywords related to title, job description, location, or filtering results based on urgency.
+
+![Search](./screenshots/search.png)
+
+---
+
+### 📄 Job Details
+Dedicated page to display full job information including skills required, salary, location, and company contact.
+
+![Job Details](./screenshots/job-details.png)
+
+---
+
+## ⚙️ Tech Stack
+
+- **Frontend**: React 18, TypeScript, React Router, Vite
+- **Mock API**: [json-server](https://github.com/typicode/json-server)
+- **UI**: Custom CSS + utility-first design
+- **Pagination**: `rc-pagination`
+- **Select Filter**: `react-select`
+
+---
+
+## 📦 Setup Instructions
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/DJOMIDO/nlpjobs.git
+cd nlpjobs
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Install dependencies**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. **Start the frontend**
+
+```bash
+npm run dev
+```
+
+4. **Start the mock backend (`json-server`)**
+
+> The job data is located in `data/jobs.json`.
+
+```bash
+npx json-server --watch data/jobs.json --port 3001
+```
+
+This will launch a REST API at `http://localhost:3001/jobs`.
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/     # Reusable UI components (cards, nav, footer, etc.)
+├── pages/          # Page-level components (Home, Jobs, NotFound, etc.)
+├── data/           # Local JSON job data
+├── types/          # TypeScript type definitions
+├── App.tsx         # App routing
+└── main.tsx        # App entry point
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
