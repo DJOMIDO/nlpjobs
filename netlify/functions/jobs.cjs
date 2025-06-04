@@ -6,7 +6,7 @@ const path = require("path");
 const app = express();
 const router = express.Router();
 
-const dataPath = path.join(process.cwd(), "public", "data", "job_data.json");
+const dataPath = path.join(__dirname, "job_data.json");
 
 router.get("/", (req, res) => {
   console.log("🔍 Reading from:", dataPath);

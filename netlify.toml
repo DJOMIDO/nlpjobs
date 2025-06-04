@@ -7,3 +7,4 @@ targetPort = 3000
 
 [functions]
 directory = "netlify/functions"
+included_files = ["netlify/functions/job_data.json"]
