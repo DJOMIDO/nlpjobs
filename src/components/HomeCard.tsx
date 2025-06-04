@@ -14,7 +14,7 @@ const HomeCard: React.FC = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await fetch("http://localhost:3001/jobs");
+        const response = await fetch("/.netlify/functions/jobs");
         const data = await response.json();
         const urgentJobs = data.filter((job: Job) => job.urgent).slice(0, 8);
         setUrgentJobs(urgentJobs);
