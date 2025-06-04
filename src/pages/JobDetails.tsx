@@ -13,7 +13,7 @@ const JobDetails: React.FC = () => {
   useEffect(() => {
     const fetchJobDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/jobs/${jobId}`);
+        const response = await fetch(`/.netlify/functions/jobs/${jobId}`);
         const data = await response.json();
         setJob(data);
       } catch (error) {

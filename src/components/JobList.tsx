@@ -25,7 +25,7 @@ const JobList: React.FC = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await fetch("http://localhost:3001/jobs");
+        const response = await fetch("/.netlify/functions/jobs");
         const data = await response.json();
         setJobs(data);
         setFilteredJobs(data);
