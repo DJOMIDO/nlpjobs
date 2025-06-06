@@ -1,4 +1,4 @@
-// src/components/SearchBar.tsx
+/* src/components/SearchBar.tsx */
 
 import React, { useState } from "react";
 import "./SearchBar.css";

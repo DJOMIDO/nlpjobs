@@ -1,13 +1,23 @@
-// src/pages/JobDetails.tsx
+/* src/pages/JobDetails.tsx */
 
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Job } from "../types/jobTypes";
 import { formatSalary } from "../utils/formatSalary";
-import "./JobDetails.css";
+import {
+  Box,
+  Heading,
+  Text,
+  Stack,
+  Button,
+  Center,
+  Spinner,
+} from "@chakra-ui/react";
+import sprinkle from "../assets/sprinkle.svg";
 
 const JobDetails: React.FC = () => {
   const { jobId } = useParams<{ jobId: string }>();
+  const navigate = useNavigate();
   const [job, setJob] = useState<Job | null>(null);
 
   useEffect(() => {
@@ -25,39 +35,97 @@ const JobDetails: React.FC = () => {
   }, [jobId]);
 
   if (!job) {
-    return <div>Loading job details...</div>;
+    return (
+      <Center py={12}>
+        <Spinner size="xl" color="red.500" />
+      </Center>
+    );
   }
 
   return (
-    <div className="job-details-container">
-      <div className="job-details">
-        <h1 className="job-details-title">{job.title}</h1>
-        <p className="job-details-type">Job Type: {job.jobType}</p>
-        <p className="job-details-description">
-          Job Description: <br />
-          {job.description}
-        </p>
-        <p className="job-details-salary">
-          Salary: {formatSalary(job.salaryRange.min)} -{" "}
-          {formatSalary(job.salaryRange.max)} {job.salaryRange.unit}
-        </p>
-        <p className="job-details-location">
-          Location: {job.location.city}, {job.location.state},{" "}
-          {job.location.country}
-        </p>
-        <p className="job-details-experience">
-          Experience Required: {job.experienceRequired}
-        </p>
-        <p className="job-details-skills">
-          Skills Required: {job.skillsRequired?.join(", ") || "N/A"}
-        </p>
-        <p className="job-details-company">Company: {job.company}</p>
-        <p className="job-details-email">
-          E-mail: {job.contact?.email || "N/A"}
-        </p>
-        <p className="job-details-tel">Tel: {job.contact?.phone || "N/A"}</p>
-      </div>
-    </div>
+    <Box
+      w="full"
+      minH="100vh"
+      bgImage={`url(${sprinkle})`}
+      position="center"
+      bgRepeat="no-repeat"
+      bgSize="cover"
+      bgColor="gray.50"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      p={4}
+    >
+      <Box bg="white" p={8} rounded="md" shadow="md" width="100%" maxW="4xl">
+        <Button
+          mb={6}
+          onClick={() => navigate("/jobs")}
+          bg="gray.600"
+          _hover={{ bg: "gray.800" }}
+          color="white"
+          variant="outline"
+          size="sm"
+        >
+          Back to Jobs
+        </Button>
+
+        <Heading as="h1" size="xl" mb={6}>
+          {job.title}
+        </Heading>
+
+        <Stack
+          direction="column"
+          gap={4}
+          align="start"
+          fontSize="md"
+          lineHeight="tall"
+        >
+          <Text>
+            <strong>Job Type:</strong> {job.jobType}
+          </Text>
+
+          <Box>
+            <Text fontWeight="semibold" mb={1}>
+              Job Description:
+            </Text>
+            <Text whiteSpace="pre-line">{job.description}</Text>
+          </Box>
+
+          <Text color="blue.600" fontWeight="bold">
+            Salary: {formatSalary(job.salaryRange.min)} -{" "}
+            {formatSalary(job.salaryRange.max)} {job.salaryRange.unit}
+          </Text>
+
+          <Text>
+            <strong>Location:</strong> {job.location.city}, {job.location.state}
+            , {job.location.country}
+          </Text>
+
+          <Text>
+            <strong>Experience Required:</strong> {job.experienceRequired}
+          </Text>
+
+          <Text>
+            <strong>Skills Required:</strong>{" "}
+            {job.skillsRequired?.join(", ") || "N/A"}
+          </Text>
+
+          <Box height="1px" width="100%" bg="gray.200" my={4} />
+
+          <Text>
+            <strong>Company:</strong> {job.company}
+          </Text>
+
+          <Text>
+            <strong>E-mail:</strong> {job.contact?.email || "N/A"}
+          </Text>
+
+          <Text>
+            <strong>Tel:</strong> {job.contact?.phone || "N/A"}
+          </Text>
+        </Stack>
+      </Box>
+    </Box>
   );
 };
 

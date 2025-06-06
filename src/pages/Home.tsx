@@ -1,4 +1,4 @@
-// src/pages/Home.tsx
+/* src/pages/Home.tsx */
 
 import Hero from "../components/Hero";
 import HomeCard from "../components/HomeCard";
