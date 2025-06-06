@@ -15,7 +15,6 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@tailwindcss/vite": "^4.1.8",
-    "@zag-js/tooltip": "^1.15.0",
     "express": "^5.1.0",
     "framer-motion": "^12.16.0",
     "mongodb": "^6.17.0",
