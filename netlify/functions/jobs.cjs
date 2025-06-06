@@ -1,40 +1,44 @@
+const { MongoClient } = require("mongodb");
 const express = require("express");
 const serverless = require("serverless-http");
-const fs = require("fs");
-const path = require("path");
 
 const app = express();
 const router = express.Router();
 
-const dataPath = path.join(__dirname, "job_data.json");
+const uri = process.env.MONGODB_URI;
+const dbName = "nlpjobs";
+const collectionName = "jobs";
 
-router.get("/", (req, res) => {
-  console.log("🔍 Reading from:", dataPath);
+router.get("/", async (req, res) => {
+  const client = new MongoClient(uri);
   try {
-    const rawData = fs.readFileSync(dataPath, "utf-8");
-    const jobs = JSON.parse(rawData).jobs;
+    await client.connect();
+    const db = client.db(dbName);
+    const jobsCollection = db.collection(collectionName);
+    const jobs = await jobsCollection.find().toArray();
     res.json(jobs);
-  } catch (error) {
-    console.error("❌ Failed to load job data:", error.message);
-    res.status(500).json({ error: "Failed to load job data." });
+  } finally {
+    await client.close();
   }
 });
 
-router.get("/:id", (req, res) => {
-  const jobId = req.params.id;
+router.get("/:id", async (req, res) => {
+  const client = new MongoClient(uri);
   try {
-    const rawData = fs.readFileSync(dataPath, "utf-8");
-    const jobs = JSON.parse(rawData).jobs;
-    const job = jobs.find((j) => j.id === jobId);
-
+    await client.connect();
+    const db = client.db(dbName);
+    const jobsCollection = db.collection(collectionName);
+    const job = await jobsCollection.findOne({ id: req.params.id });
     if (!job) {
       return res.status(404).json({ error: "Job not found" });
     }
 
     res.json(job);
   } catch (error) {
-    console.error("❌ Error fetching job by ID:", error);
-    res.status(500).json({ error: "Failed to fetch job" });
+    console.error("❌ Error fetching job by ID:", error.message);
+    res.status(500).json({ error: "Failed to fetch job by ID." });
+  } finally {
+    await client.close();
   }
 });
 
