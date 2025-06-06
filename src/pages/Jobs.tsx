@@ -1,4 +1,4 @@
-// src/pages/Jobs.tsx
+/* src/pages/Jobs.tsx */
 
 import JobList from "../components/JobList";
 

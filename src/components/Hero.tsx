@@ -1,20 +1,52 @@
-// src/components/Hero.tsx
+/* src/components/Hero.tsx */
 
-import "./Hero.css";
+import {
+  Box,
+  Heading,
+  Text,
+  Button,
+  Link as ChakraLink,
+} from "@chakra-ui/react";
+
+import patterns from "../assets/patterns.svg";
 
 const Hero = ({
   title = "Unlock Your Future in NLP",
-  subtitle =
-    "Start your journey in natural language processing from here.",
+  subtitle = "Start your journey in natural language processing from here.",
 }) => {
   return (
-    <section className="hero">
-      <div className="hero-content">
-        <h1 className="hero-title">{title}</h1>
-        <p className="hero-subtitle">{subtitle}</p>
-        <a href="#home-card-section" className="hero-cta">Browse Jobs</a>
-      </div>
-    </section>
+    <Box
+      as="section"
+      minH="100vh"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      textAlign="center"
+      px={4}
+      style={{
+        backgroundImage: `url(${patterns})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <Box maxW="4xl" bg="rgba(0,0,0,0.5)" p={8} borderRadius="xl">
+        <Heading as="h1" size="4xl" color="white" mb={8}>
+          {title}
+        </Heading>
+        <Text fontSize="2xl" color="white" mb={8}>
+          {subtitle}
+        </Text>
+        <ChakraLink
+          href="#home-card-section"
+          _hover={{ textDecoration: "none" }}
+        >
+          <Button size="lg" bg="white" color="black" _hover={{ bg: "#575757" }}>
+            Browse Jobs
+          </Button>
+        </ChakraLink>
+      </Box>
+    </Box>
   );
 };
 

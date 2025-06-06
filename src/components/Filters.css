@@ -1,78 +1,98 @@
 /* src/components/Filters.css */
 
 .filter-container {
-    display         : flex;
-    flex-direction  : column;
-    align-items     : center;
-    position        : absolute;
-    background-color: #f7f7f7;
-    padding         : 1rem;
-    gap             : 1rem;
-    border-radius   : 0.5rem;
-    box-shadow      : 0px 6px 6px rgba(0, 0, 0, 0.1);
-    z-index         : 10;
-    min-width       : 15rem;
-    margin-top      : 5rem;
-    width           : 100%;
-    max-width       : 41.5rem;
+  position: fixed;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f7f7f7;
+  padding: 1rem;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  min-width: 15rem;
+  width: 100%;
+  max-width: 42rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .filter-header {
-    display        : flex;
-    align-items    : center;
-    justify-content: flex-end;
-    width          : 100%;
-    padding        : 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+
+.filter-header .header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff3131;
 }
 
 .filter-close-btn {
-    cursor   : pointer;
-    font-size: rem;
-    color    : #5356FF;
+  cursor: pointer;
+  font-size: rem;
+  color: #575757;
 }
 
 .filter-close-btn:hover {
-    cursor   : pointer;
-    font-size: 1.5rem;
-    color    : #87A2FF;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #ff3131;
 }
 
 .filter-item {
-    display        : flex;
-    justify-content: space-between;
-    align-items    : center;
-    width          : 100%;
-    padding        : 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.125rem 1rem;
 }
 
 .filter-item label {
-    color      : #575757;
-    font-weight: 500;
+  color: #575757;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .toggle-icon {
-    cursor    : pointer;
-    transition: color 0.3s ease;
-    font-size : 3rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: 3rem;
 }
 
 .toggle-off {
-    color: #ccc;
+  color: #575757;
 }
 
 .toggle-on {
-    color: #5356FF;
+  color: #ff3131;
 }
 
 .filter-item {
-    display        : flex;
-    justify-content: space-between;
-    align-items    : center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  z-index: 99;
+}
 
 @media (max-width: 768px) {
-    .filter-container {
-        max-width: 20.75rem;
-    }
+  .filter-container {
+    max-width: 20.75rem;
+  }
 }

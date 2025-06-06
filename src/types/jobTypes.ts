@@ -1,4 +1,4 @@
-// src/types/jobTypes.ts
+/* src/types/jobTypes.ts */
 
 export interface Job {
   id: string;

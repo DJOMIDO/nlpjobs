@@ -1,4 +1,4 @@
-// src/components/Filter.tsx
+/* src/components/Filters.tsx */
 
 import React, { useState, useEffect } from "react";
 import Select, { SingleValue } from "react-select";
@@ -86,45 +86,50 @@ const Filter: React.FC<FilterProps> = ({
   };
 
   return (
-    <div className="filter-container">
-      <div className="filter-header">
-        <span
-          className="filter-close-btn material-symbols-outlined"
-          onClick={onClose}
-        >
-          close
-        </span>
+    <>
+      <div className="overlay" onClick={onClose}></div>
+
+      <div className="filter-container">
+        <div className="filter-header">
+          <span className="header">Filter</span>
+          <span
+            className="filter-close-btn material-symbols-outlined"
+            onClick={onClose}
+          >
+            close
+          </span>
+        </div>
+        <div className="filter-item">
+          <label>By Country:</label>
+          <Select
+            value={selectedCountry}
+            options={countryOptions}
+            onChange={handleCountryChange}
+            isClearable
+          />
+        </div>
+        <div className="filter-item">
+          <label>By City:</label>
+          <Select
+            value={selectedCity}
+            options={cityOptions}
+            onChange={handleCityChange}
+            isClearable
+          />
+        </div>
+        <div className="filter-item">
+          <label>Immediate Openings:</label>
+          <span
+            className={`material-symbols-outlined toggle-icon ${
+              isUrgent ? "toggle-on" : "toggle-off"
+            }`}
+            onClick={handleUrgentToggle}
+          >
+            {isUrgent ? "toggle_on" : "toggle_off"}
+          </span>
+        </div>
       </div>
-      <div className="filter-item">
-        <label>Country:</label>
-        <Select
-          value={selectedCountry}
-          options={countryOptions}
-          onChange={handleCountryChange}
-          isClearable
-        />
-      </div>
-      <div className="filter-item">
-        <label>City:</label>
-        <Select
-          value={selectedCity}
-          options={cityOptions}
-          onChange={handleCityChange}
-          isClearable
-        />
-      </div>
-      <div className="filter-item">
-        <label>Urgent Only:</label>
-        <span
-          className={`material-symbols-outlined toggle-icon ${
-            isUrgent ? "toggle-on" : "toggle-off"
-          }`}
-          onClick={handleUrgentToggle}
-        >
-          {isUrgent ? "toggle_on" : "toggle_off"}
-        </span>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -1,3 +1,5 @@
+/* netlify/functions/jobs.cjs */
+
 const { MongoClient } = require("mongodb");
 const express = require("express");
 const serverless = require("serverless-http");
