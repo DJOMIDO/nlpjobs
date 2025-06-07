@@ -8,8 +8,6 @@ import {
   Link as ChakraLink,
 } from "@chakra-ui/react";
 
-import patterns from "../assets/patterns.svg";
-
 const Hero = ({
   title = "Unlock Your Future in NLP",
   subtitle = "Start your journey in natural language processing from here.",
@@ -24,7 +22,7 @@ const Hero = ({
       textAlign="center"
       px={4}
       style={{
-        backgroundImage: `url(${patterns})`,
+        backgroundImage: "url('/assets/patterns.svg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

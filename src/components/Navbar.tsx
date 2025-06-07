@@ -2,8 +2,8 @@
 
 import { Box, Flex, Image } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/logo.svg";
-import logoHover from "../assets/logo_hover.svg";
+import logo from "/assets/logo.svg";
+import logoHover from "/assets/logo_hover.svg";
 import { useState } from "react";
 
 const Navbar = () => {

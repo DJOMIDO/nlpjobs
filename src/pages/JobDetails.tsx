@@ -13,7 +13,6 @@ import {
   Center,
   Spinner,
 } from "@chakra-ui/react";
-import sprinkle from "../assets/sprinkle.svg";
 
 const JobDetails: React.FC = () => {
   const { jobId } = useParams<{ jobId: string }>();
@@ -46,7 +45,7 @@ const JobDetails: React.FC = () => {
     <Box
       w="full"
       minH="100vh"
-      bgImage={`url(${sprinkle})`}
+      bgImage="url('/assets/sprinkle.svg')"
       position="center"
       bgRepeat="no-repeat"
       bgSize="cover"

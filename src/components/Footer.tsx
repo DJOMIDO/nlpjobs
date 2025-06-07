@@ -1,14 +1,13 @@
 /* src/components/Footer.tsx */
 
 import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
-import logo from "../assets/logo.svg";
-import footerBg from "../assets/footer_bg.svg";
+import logo from "/assets/logo.svg";
 
 const Footer = () => {
   return (
     <Box
       as="footer"
-      bgImage={`url(${footerBg})`}
+      bgImage="url('/assets/footer_bg.svg')"
       bgRepeat="no-repeat"
       bgSize="cover"
       position="center"
