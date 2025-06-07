@@ -111,7 +111,7 @@ const JobList: React.FC = () => {
     <Box
       w="100%"
       minH="100vh"
-      bgImage="url('/assets/joblistBg.svg')"
+      bgImage="url('/assets/joblist_bg.svg')"
       bgRepeat="no-repeat"
       bgSize="cover"
       position="center"
