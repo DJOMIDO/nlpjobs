@@ -7,7 +7,6 @@ import JobCard from "./JobCard";
 import Pagination from "rc-pagination";
 import "rc-pagination/assets/index.css";
 import SearchBar from "./SearchBar";
-import joblistBg from "../assets/joblist_bg.svg";
 
 const JobList: React.FC = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -112,7 +111,7 @@ const JobList: React.FC = () => {
     <Box
       w="100%"
       minH="100vh"
-      bgImage={`url(${joblistBg})`}
+      bgImage="url('/assets/joblistBg.svg')"
       bgRepeat="no-repeat"
       bgSize="cover"
       position="center"

@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import { Job } from "../types/jobTypes";
 import { useNavigate } from "react-router-dom";
-import sprinkle from "../assets/sprinkle.svg";
 import {
   Box,
   Heading,
@@ -57,7 +56,7 @@ const HomeCard: React.FC = () => {
     <Box
       id="home-card-section"
       w="100%"
-      bgImage={`url(${sprinkle})`}
+      bgImage="url('/assets/sprinkle.svg')"
       bgRepeat="no-repeat"
       bgSize="cover"
       position="center"
