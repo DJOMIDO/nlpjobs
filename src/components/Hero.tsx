@@ -13,36 +13,30 @@ const Hero = ({
   subtitle = "Start your journey in natural language processing from here.",
 }) => {
   return (
-    <Box
-      as="section"
-      minH="100vh"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      textAlign="center"
-      px={4}
-      style={{
-        backgroundImage: "url('/assets/patterns.svg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <Box maxW="4xl" bg="rgba(0,0,0,0.5)" p={8} borderRadius="xl">
-        <Heading as="h1" size="4xl" color="white" mb={8}>
+    <Box as="section" className="hero">
+      <Box className="hero-inner">
+        <Box maxW="42rem">
+        <Text className="section-kicker">NLP-focused opportunities</Text>
+        <Heading as="h1" size="4xl" mb={5}>
           {title}
         </Heading>
-        <Text fontSize="2xl" color="white" mb={8}>
+        <Text fontSize="xl" color="var(--muted)" mb={8} maxW="34rem">
           {subtitle}
         </Text>
         <ChakraLink
           href="#home-card-section"
           _hover={{ textDecoration: "none" }}
         >
-          <Button size="lg" bg="white" color="black" _hover={{ bg: "#575757" }}>
+          <Button size="lg" className="primary-button">
             Browse Jobs
           </Button>
         </ChakraLink>
+        </Box>
+        <Box className="hero-index" aria-hidden="true">
+          <span>01</span>
+          <span>specialized</span>
+          <span>search</span>
+        </Box>
       </Box>
     </Box>
   );

@@ -17,8 +17,8 @@ const Navbar = () => {
   return (
     <Box
       as="nav"
-      bg="white"
-      boxShadow="sm"
+      bg="var(--surface)"
+      borderBottom="1px solid var(--line)"
       position="sticky"
       top="0"
       zIndex="1000"
@@ -26,7 +26,7 @@ const Navbar = () => {
       <Flex
         maxW="1200px"
         mx="auto"
-        py={4}
+        py={3}
         px={6}
         align="center"
         justify="space-between"
@@ -46,16 +46,17 @@ const Navbar = () => {
           />
         </Box>
 
-        <Flex gap={8}>
+        <Flex gap={6} align="center">
           {links.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               style={({ isActive }) => ({
-                color: isActive ? "#ff3131" : "#575757",
+                color: isActive ? "var(--accent)" : "var(--muted)",
                 fontWeight: isActive ? "bold" : "normal",
-                textTransform: isActive ? "uppercase" : "none",
-                fontSize: "1rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                fontSize: "0.78rem",
                 textDecoration: "none",
                 cursor: "pointer",
               })}

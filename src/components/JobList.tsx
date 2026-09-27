@@ -1,12 +1,13 @@
 /* src/components/JobList.tsx */
 
 import React, { useEffect, useState } from "react";
-import { Box, SimpleGrid, Spinner, Center } from "@chakra-ui/react";
+import { Box, Spinner, Center, Heading, Text } from "@chakra-ui/react";
 import { Job } from "../types/jobTypes";
 import JobCard from "./JobCard";
 import Pagination from "rc-pagination";
 import "rc-pagination/assets/index.css";
 import SearchBar from "./SearchBar";
+import { fetchJobs } from "../utils/jobsApi";
 
 const JobList: React.FC = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -18,25 +19,26 @@ const JobList: React.FC = () => {
     keyword?: string;
   }>({});
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [isFilterVisible, setIsFilterVisible] = useState(false);
   const jobsPerPage = 8;
 
   useEffect(() => {
-    const fetchJobs = async () => {
+    const loadJobs = async () => {
       try {
-        const response = await fetch("/.netlify/functions/jobs");
-        const data = await response.json();
+        const data = await fetchJobs();
         setJobs(data);
         setFilteredJobs(data);
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching jobs:", error);
+        setError("Jobs are temporarily unavailable. Please try again later.");
+      } finally {
         setLoading(false);
       }
     };
 
-    fetchJobs();
+    loadJobs();
   }, []);
 
   useEffect(() => {
@@ -108,17 +110,15 @@ const JobList: React.FC = () => {
   };
 
   return (
-    <Box
-      w="100%"
-      minH="100vh"
-      bgImage="url('/assets/joblist_bg.svg')"
-      bgRepeat="no-repeat"
-      bgSize="cover"
-      position="center"
-      px={0}
-      py={12}
-    >
-      <Box w="100%" maxW="1200px" mx="auto" px={6}>
+    <Box className="jobs-page">
+      <Box className="jobs-shell">
+        <Box className="jobs-heading">
+          <Box>
+            <Text className="section-kicker">The directory</Text>
+            <Heading as="h1">Find your next NLP role.</Heading>
+          </Box>
+          {!loading && !error && <Text className="result-count">{filteredJobs.length} roles indexed</Text>}
+        </Box>
         <SearchBar
           onSearch={handleSearch}
           onToggleFilter={toggleFilterVisibility}
@@ -132,13 +132,14 @@ const JobList: React.FC = () => {
           <Center py={12}>
             <Spinner size="xl" color="red.500" />
           </Center>
+        ) : error ? (
+          <Center py={12} color="red.600">
+            {error}
+          </Center>
+        ) : filteredJobs.length === 0 ? (
+          <Center py={12}>No jobs match your current filters.</Center>
         ) : (
-          <SimpleGrid
-            columns={{ base: 1, md: 2, lg: 4 }}
-            gap={6}
-            justifyItems="center"
-            mt={10}
-          >
+          <Box className="job-list">
             {currentJobs.map((job) => (
               <JobCard
                 key={job.id}
@@ -146,10 +147,10 @@ const JobList: React.FC = () => {
                 onViewDetails={() => window.open(`/job/${job.id}`, "_blank")}
               />
             ))}
-          </SimpleGrid>
+          </Box>
         )}
 
-        <Center mt={8}>
+        <Center className="pagination-wrap">
           <Pagination
             current={currentPage}
             total={filteredJobs.length}

@@ -4,18 +4,21 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: auto;
-  max-width: 42rem;
-  margin: 0 auto;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-  overflow: hidden;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: 0 8px 24px rgba(24, 33, 47, 0.06);
+}
+
+.search-bar:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(233, 66, 66, 0.18);
 }
 
 .search-bar input {
-  padding: 0.5rem 1rem 0.5rem 2.5rem;
-  font-size: 1rem;
+  padding: 1rem 1rem 1rem 3rem;
+  font-size: 1.05rem;
   border: none;
   width: 100%;
   outline: none;
@@ -23,7 +26,7 @@
 }
 
 .search-bar input:focus {
-  border-color: #5356ff;
+  outline: none;
 }
 
 .search-icon {
@@ -35,18 +38,19 @@
 }
 
 .filter-btn {
-  background: none;
+  background: var(--navy);
+  color: white;
   border: none;
-  padding: 0.5rem;
+  padding: 0.85rem 1.15rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #aaa;
+  color: white;
 }
 
 .filter-btn:hover {
-  color: #87a2ff;
+  background: var(--accent);
 }
 
 .search-bar .filter-btn .material-symbols-outlined {
@@ -55,6 +59,6 @@
 
 @media (max-width: 768px) {
   .search-bar {
-    max-width: 20.75rem;
+    max-width: none;
   }
 }

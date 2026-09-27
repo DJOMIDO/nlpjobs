@@ -7,10 +7,7 @@ const Footer = () => {
   return (
     <Box
       as="footer"
-      bgImage="url('/assets/footer_bg.svg')"
-      bgRepeat="no-repeat"
-      bgSize="cover"
-      position="center"
+      bg="var(--navy)"
       color="white"
       py={16}
       px={4}
