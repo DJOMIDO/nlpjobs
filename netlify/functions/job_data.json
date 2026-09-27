@@ -1,0 +1,81 @@
+[
+  {
+    "id": "nlp-research-engineer",
+    "jobType": "Full-time",
+    "title": "NLP Research Engineer",
+    "description": "Design and evaluate language models for information extraction, classification, and retrieval. Work closely with product and research teams to turn experiments into reliable features.",
+    "salaryRange": { "min": 120000, "max": 165000, "unit": "USD/year" },
+    "location": { "city": "New York", "state": "NY", "country": "United States" },
+    "urgent": true,
+    "company": "Northstar AI",
+    "postingDate": "2026-08-15",
+    "experienceRequired": "3+ years",
+    "skillsRequired": ["Python", "PyTorch", "Transformers", "SQL"],
+    "contact": { "email": "careers@northstar.example" }
+  },
+  {
+    "id": "language-data-scientist",
+    "jobType": "Full-time",
+    "title": "Language Data Scientist",
+    "description": "Build data pipelines and evaluation sets that improve the quality, safety, and coverage of conversational AI products.",
+    "salaryRange": { "min": 105000, "max": 145000, "unit": "USD/year" },
+    "location": { "city": "London", "country": "United Kingdom" },
+    "urgent": true,
+    "company": "Lingo Labs",
+    "postingDate": "2026-08-21",
+    "experienceRequired": "2+ years",
+    "skillsRequired": ["Python", "Pandas", "NLP", "Experiment design"]
+  },
+  {
+    "id": "ml-platform-engineer",
+    "jobType": "Full-time",
+    "title": "ML Platform Engineer",
+    "description": "Own the tooling and infrastructure used to train, evaluate, and serve natural language models at scale.",
+    "salaryRange": { "min": 130000, "max": 180000, "unit": "USD/year" },
+    "location": { "city": "Toronto", "state": "ON", "country": "Canada" },
+    "urgent": false,
+    "company": "Maple Computing",
+    "postingDate": "2026-08-04",
+    "experienceRequired": "4+ years",
+    "skillsRequired": ["Python", "Docker", "Kubernetes", "AWS"]
+  },
+  {
+    "id": "conversation-designer",
+    "jobType": "Contract",
+    "title": "Conversation Designer",
+    "description": "Create natural, useful conversational flows and collaborate with researchers to turn user feedback into better assistant experiences.",
+    "salaryRange": { "min": 70, "max": 95, "unit": "USD/hour" },
+    "location": { "city": "Remote", "country": "Worldwide" },
+    "urgent": true,
+    "company": "Good Question",
+    "postingDate": "2026-08-19",
+    "experienceRequired": "2+ years",
+    "skillsRequired": ["Conversation design", "UX writing", "User research"]
+  },
+  {
+    "id": "information-retrieval-specialist",
+    "jobType": "Full-time",
+    "title": "Information Retrieval Specialist",
+    "description": "Improve search relevance with ranking models, semantic retrieval, and measurable offline and online evaluations.",
+    "salaryRange": { "min": 115000, "max": 155000, "unit": "USD/year" },
+    "location": { "city": "Berlin", "country": "Germany" },
+    "urgent": false,
+    "company": "Signal Search",
+    "postingDate": "2026-07-28",
+    "experienceRequired": "3+ years",
+    "skillsRequired": ["Information retrieval", "Python", "Elasticsearch", "Embeddings"]
+  },
+  {
+    "id": "nlp-intern",
+    "jobType": "Internship",
+    "title": "NLP Engineering Intern",
+    "description": "Help prototype text processing features, analyze model behavior, and build small tools for the language engineering team.",
+    "salaryRange": { "min": 28, "max": 38, "unit": "USD/hour" },
+    "location": { "city": "San Francisco", "state": "CA", "country": "United States" },
+    "urgent": false,
+    "company": "Bright Text",
+    "postingDate": "2026-08-11",
+    "experienceRequired": "Student or recent graduate",
+    "skillsRequired": ["Python", "Machine learning", "Git"]
+  }
+]

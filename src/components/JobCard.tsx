@@ -1,14 +1,5 @@
 /* src/components/JobCard.tsx */
 
-import {
-  Box,
-  Badge,
-  Heading,
-  Text,
-  Button,
-  Center,
-  Stack,
-} from "@chakra-ui/react";
 import { Job } from "../types/jobTypes";
 import { formatSalary } from "../utils/formatSalary";
 
@@ -24,75 +15,25 @@ const JobCard = ({ job, onViewDetails }: JobCardProps) => {
       : job.description || "No description";
 
   return (
-    <Box
-      borderWidth="1px"
-      borderRadius="lg"
-      p={6}
-      boxShadow="md"
-      bg="white"
-      minH="26rem"
-      maxW="20rem"
-      w="100%"
-      display="flex"
-      flexDirection="column"
-      justifyContent="space-between"
-      position="relative"
-      textAlign="center"
-    >
-      <Box h="1.75rem" position="absolute" top={2} right={2}>
-        {job.urgent && (
-          <Badge
-            bg="red.500"
-            _hover={{ bg: "red.300" }}
-            color="white"
-            fontSize="0.75rem"
-            px={2}
-            py={1}
-            borderRadius="md"
-          >
-            Apply Now!
-          </Badge>
-        )}
-      </Box>
-
-      <Stack gap={3} mt="1.75rem" flexGrow={1}>
-        <Heading as="h3" size="md">
-          {job.title}
-        </Heading>
-
-        <Text fontWeight="medium">{job.jobType}</Text>
-
-        <Text fontSize="sm" color="gray.600" textAlign="left">
-          {shortDescription}
-        </Text>
-
-        <Center mt={4}>
-          <Text fontWeight="bold" color="blue.500">
-            {formatSalary(job.salaryRange.min)} -{" "}
-            {formatSalary(job.salaryRange.max)} {job.salaryRange.unit}
-          </Text>
-        </Center>
-
-        <Center mt={6}>
-          <Text fontSize="sm" color="gray.500">
-            {job.location.city}
-            {job.location.state ? `, ${job.location.state}` : ""},{" "}
-            {job.location.country}
-          </Text>
-        </Center>
-      </Stack>
-
-      <Button
-        mt={4}
-        color="white"
-        bg="gray.600"
-        _hover={{ bg: "gray.800" }}
-        onClick={onViewDetails}
-        alignSelf="center"
-      >
-        View More
-      </Button>
-    </Box>
+    <article className="job-row">
+      <div className="job-main">
+        <div className="job-title-line">
+          <h3>{job.title}</h3>
+          {job.urgent && <span className="job-badge">Urgent</span>}
+        </div>
+        <p className="job-company">{job.company || "Independent team"} <span>·</span> {job.jobType}</p>
+        <p className="job-description">{shortDescription}</p>
+      </div>
+      <div className="job-meta">
+        <strong>{formatSalary(job.salaryRange.min)} – {formatSalary(job.salaryRange.max)}</strong>
+        <span>{job.salaryRange.unit}</span>
+      </div>
+      <div className="job-location">
+        <span className="material-symbols-outlined" aria-hidden="true">location_on</span>
+        <span>{job.location.city}{job.location.state ? `, ${job.location.state}` : ""}, {job.location.country}</span>
+      </div>
+      <button className="row-action" onClick={onViewDetails}>View role <span aria-hidden="true">↗</span></button>
+    </article>
   );
 };
 

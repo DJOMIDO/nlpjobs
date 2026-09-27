@@ -7,33 +7,34 @@ import { useNavigate } from "react-router-dom";
 import {
   Box,
   Heading,
-  SimpleGrid,
   Button,
   Spinner,
   Center,
   Text,
 } from "@chakra-ui/react";
+import { fetchJobs } from "../utils/jobsApi";
 
 const HomeCard: React.FC = () => {
   const [urgentJobs, setUrgentJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchJobs = async () => {
+    const loadJobs = async () => {
       try {
-        const response = await fetch("/.netlify/functions/jobs");
-        const data = await response.json();
+        const data = await fetchJobs();
         const urgentJobs = data.filter((job: Job) => job.urgent).slice(0, 8);
         setUrgentJobs(urgentJobs);
       } catch (error) {
         console.error("Error fetching jobs:", error);
+        setError("Featured jobs are temporarily unavailable.");
       } finally {
         setLoading(false);
       }
     };
 
-    fetchJobs();
+    loadJobs();
   }, []);
 
   if (loading) {
@@ -47,32 +48,22 @@ const HomeCard: React.FC = () => {
   if (urgentJobs.length === 0) {
     return (
       <Center py={12}>
-        <Text fontSize="lg">No urgent jobs found.</Text>
+        <Text fontSize="lg">{error ?? "No urgent jobs found."}</Text>
       </Center>
     );
   }
 
   return (
-    <Box
-      id="home-card-section"
-      w="100%"
-      bgImage="url('/assets/sprinkle.svg')"
-      bgRepeat="no-repeat"
-      bgSize="cover"
-      position="center"
-      py={12}
-      px={0}
-    >
+    <Box id="home-card-section" className="home-featured">
       <Box maxW="1200px" mx="auto" px={6}>
-        <Heading as="h1" size="4xl" mb={8} textAlign="center" color="white">
-          Don’t Miss These Opportunities!
-        </Heading>
-        <SimpleGrid
-          columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
-          gap={6}
-          justifyItems="center"
-          alignItems="stretch"
-        >
+        <Box className="section-heading">
+          <Box>
+            <Text className="section-kicker">Featured now</Text>
+            <Heading as="h2" size="2xl">Openings worth a closer look</Heading>
+          </Box>
+          <Button variant="ghost" className="text-button" onClick={() => navigate("/jobs")}>View all jobs <span aria-hidden="true">→</span></Button>
+        </Box>
+        <Box className="job-list featured-list">
           {urgentJobs.map((job) => (
             <JobCard
               key={job.id}
@@ -80,19 +71,7 @@ const HomeCard: React.FC = () => {
               onViewDetails={() => window.open(`/job/${job.id}`, "_blank")}
             />
           ))}
-        </SimpleGrid>
-
-        <Center mt={10}>
-          <Button
-            size="lg"
-            bg="black"
-            color="white"
-            _hover={{ bg: "gray.700" }}
-            onClick={() => navigate("/jobs")}
-          >
-            View All Jobs
-          </Button>
-        </Center>
+        </Box>
       </Box>
     </Box>
   );

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Job } from "../types/jobTypes";
 import { formatSalary } from "../utils/formatSalary";
+import { fetchJob } from "../utils/jobsApi";
 import {
   Box,
   Heading,
@@ -18,20 +19,25 @@ const JobDetails: React.FC = () => {
   const { jobId } = useParams<{ jobId: string }>();
   const navigate = useNavigate();
   const [job, setJob] = useState<Job | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchJobDetails = async () => {
       try {
-        const response = await fetch(`/.netlify/functions/jobs/${jobId}`);
-        const data = await response.json();
-        setJob(data);
+        if (!jobId) throw new Error("Job ID is missing");
+        setJob(await fetchJob(jobId));
       } catch (error) {
         console.error("Error fetching job details:", error);
+        setError("This job could not be loaded.");
       }
     };
 
     fetchJobDetails();
   }, [jobId]);
+
+  if (error) {
+    return <Center py={12} color="red.600">{error}</Center>;
+  }
 
   if (!job) {
     return (
@@ -42,37 +48,23 @@ const JobDetails: React.FC = () => {
   }
 
   return (
-    <Box
-      w="full"
-      minH="100vh"
-      bgImage="url('/assets/sprinkle.svg')"
-      position="center"
-      bgRepeat="no-repeat"
-      bgSize="cover"
-      bgColor="gray.50"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      p={4}
-    >
-      <Box bg="white" p={8} rounded="md" shadow="md" width="100%" maxW="4xl">
+    <Box className="detail-page">
+      <Box className="detail-shell">
         <Button
           mb={6}
           onClick={() => navigate("/jobs")}
-          bg="gray.600"
-          _hover={{ bg: "gray.800" }}
-          color="white"
-          variant="outline"
+          className="back-button"
           size="sm"
         >
           Back to Jobs
         </Button>
 
-        <Heading as="h1" size="xl" mb={6}>
+        <Text className="section-kicker">Role detail</Text>
+        <Heading as="h1" size="2xl" mb={6}>
           {job.title}
         </Heading>
 
-        <Stack
+        <Stack className="detail-content"
           direction="column"
           gap={4}
           align="start"
@@ -90,7 +82,7 @@ const JobDetails: React.FC = () => {
             <Text whiteSpace="pre-line">{job.description}</Text>
           </Box>
 
-          <Text color="blue.600" fontWeight="bold">
+          <Text className="detail-salary">
             Salary: {formatSalary(job.salaryRange.min)} -{" "}
             {formatSalary(job.salaryRange.max)} {job.salaryRange.unit}
           </Text>

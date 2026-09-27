@@ -1,7 +1,7 @@
 /* src/index.css */
 
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap");
 
 *,
 *::before,
@@ -11,7 +11,9 @@
 
 html,
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "DM Sans", sans-serif;
+  background: #f6f7f9;
+  color: #18212f;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,4 +21,350 @@ body {
 
 footer {
   flex-shrink: 0;
+}
+
+:root {
+  --ink: #18212f;
+  --muted: #667085;
+  --line: #dfe4ea;
+  --surface: #ffffff;
+  --accent: #e94242;
+  --accent-soft: #fff0ef;
+  --navy: #14253d;
+}
+
+h1,
+h2,
+h3,
+.section-kicker,
+.hero-index {
+  font-family: "Sora", sans-serif;
+}
+
+.hero {
+  min-height: 58vh;
+  display: flex;
+  align-items: center;
+  background: #eef1f5;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-inner {
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.hero h1 {
+  color: var(--ink);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.07em;
+  max-width: 8ch;
+}
+
+.section-kicker {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.hero-index {
+  display: grid;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: clamp(1.3rem, 3vw, 2.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  text-align: right;
+}
+
+.hero-index span:nth-child(n + 2) {
+  color: var(--muted);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.primary-button,
+.row-action {
+  background: var(--navy) !important;
+  color: white !important;
+  border: 0;
+  border-radius: 0 !important;
+  font-weight: 600;
+}
+
+.primary-button:hover,
+.row-action:hover {
+  background: var(--accent) !important;
+}
+
+.home-featured,
+.jobs-page {
+  padding: 5.5rem 0;
+  background: #f6f7f9;
+}
+
+.section-heading,
+.jobs-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.section-heading h2,
+.jobs-heading h1 {
+  margin: 0;
+  color: var(--ink);
+  letter-spacing: -0.05em;
+}
+
+.text-button {
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+}
+
+.jobs-shell {
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.jobs-heading {
+  align-items: end;
+  margin-bottom: 2rem;
+}
+
+.jobs-heading h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.result-count {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding-bottom: 0.35rem;
+}
+
+.job-list {
+  margin-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.job-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(10rem, 1fr) minmax(10rem, 1fr) auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.job-row:hover {
+  background: var(--surface);
+  transform: translateX(0.35rem);
+}
+
+.job-title-line {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.job-title-line h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.job-company,
+.job-description,
+.job-location,
+.job-meta span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.job-company {
+  margin: 0.35rem 0;
+}
+
+.job-company span {
+  color: var(--line);
+  padding: 0 0.25rem;
+}
+
+.job-description {
+  max-width: 52ch;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.job-badge {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.45rem;
+}
+
+.job-meta {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.job-meta strong {
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+.job-location {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.job-location .material-symbols-outlined {
+  font-size: 1rem;
+}
+
+.row-action {
+  white-space: nowrap;
+  padding: 0.65rem 0.8rem;
+  cursor: pointer;
+}
+
+.pagination-wrap {
+  margin-top: 2rem;
+}
+
+.pagination-wrap .rc-pagination-item-active {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.detail-page {
+  min-height: 75vh;
+  padding: 4rem 1rem 6rem;
+  background: #eef1f5;
+}
+
+.detail-shell {
+  width: min(860px, 100%);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background: var(--surface);
+  border-top: 4px solid var(--accent);
+}
+
+.back-button {
+  background: var(--accent) !important;
+  border: 0 !important;
+  color: white !important;
+  padding: 0.7rem 1rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+}
+
+.back-button:hover {
+  background: var(--navy) !important;
+  color: white !important;
+}
+
+.detail-shell h1 {
+  color: var(--ink);
+  letter-spacing: -0.05em;
+}
+
+.detail-content {
+  color: var(--muted);
+}
+
+.detail-content strong {
+  color: var(--ink);
+}
+
+.detail-salary {
+  color: var(--accent) !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 800px) {
+  .hero-inner,
+  .jobs-shell {
+    width: min(100% - 2rem, 42rem);
+  }
+
+  .hero-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-index {
+    text-align: left;
+  }
+
+  .job-row {
+    grid-template-columns: 1fr auto;
+    gap: 0.7rem 1rem;
+  }
+
+  .job-main {
+    grid-column: 1 / -1;
+  }
+
+  .job-location {
+    grid-column: 1;
+  }
+
+  .row-action {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-featured,
+  .jobs-page {
+    padding: 3.5rem 0;
+  }
+
+  .section-heading,
+  .jobs-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .job-row:hover { transform: translateX(0.2rem); }
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+.chakra-button {
+  border-radius: 0 !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid #f6a5a5;
+  outline-offset: 3px;
 }

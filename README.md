@@ -8,15 +8,15 @@
 
 NLP Jobs is a dedicated job board platform focused on opportunities in the Natural Language Processing (NLP) domain. Users can browse the latest NLP job openings, apply multiple filters and search keywords, and view detailed job descriptions.
 
-This project uses a modern technology stack with a **React** frontend built with **Tailwind CSS** and **Chakra UI**, an **Express.js** backend, and **MongoDB** for data storage, providing a seamless and responsive user experience.
+This project uses a modern technology stack with a **React** frontend built with **Tailwind CSS** and **Chakra UI**, plus a small **Netlify Function** API. The API serves committed demo data by default, with optional MongoDB support when a connection string is configured.
 
 ---
 
 ## Technology Stack
 
 - **Frontend:** React, Tailwind CSS, Chakra UI  
-- **Backend:** Express.js  
-- **Database:** MongoDB  
+- **Backend:** Netlify Functions (Express-compatible handler)
+- **Database:** Committed demo dataset by default; optional MongoDB Atlas
 - **Deployment:** Netlify (frontend) + Netlify Functions (backend APIs)  
 - **Others:** React Router, rc-pagination, react-select
 - **Background Images:** [BGJar](https://bgjar.com/) 
@@ -66,36 +66,45 @@ npm install
 
 ### 3. Configure environment variables
 
-Create a `.env` file in the root directory and add your MongoDB connection string:
+Create a `.env` file in the root directory only if you want to test MongoDB-backed data:
 
 ```env
-VITE_MONGODB_URI=your-mongodb-connection-string
+MONGODB_URI=your-mongodb-connection-string
 ```
 
-### 4. Run the development server
+### 4. Run the local MongoDB-backed development server
 
-You can start the local development server with:
+After filling in `MONGODB_URI` in `.env`, start Netlify Dev so that the Vite
+frontend and the Netlify Function run together:
 
 ```bash
-npm run dev
+npx netlify dev
 ```
 
-or, if you use Netlify CLI, run:
+The local site is usually available at `http://localhost:8888`. Test the API
+directly at:
 
-```bash
-netlify dev
+```text
+http://localhost:8888/.netlify/functions/jobs
 ```
 
-### 5. Backend simulation
+Do not use only `npm run dev` when testing MongoDB data. Vite serves the
+frontend, but it does not execute `netlify/functions/jobs.cjs`.
 
-The backend API is implemented using Netlify Functions, with data stored in MongoDB Atlas. For local development, you may use tools like json-server to mock the API.
+### 5. Local API development
+
+The backend API is implemented as a Netlify Function at
+`/.netlify/functions/jobs`. It always has a small committed dataset available,
+so the portfolio works without a database. If `MONGODB_URI` is present, the
+function tries MongoDB first and falls back to the demo dataset if the database
+is unavailable.
 
 ---
 
 ## Deployment
 
 - Frontend deployed on [Netlify](https://www.netlify.com/)  
-- Backend API hosted with Netlify Functions; no separate server required
+- Backend API hosted with Netlify Functions; no separate server or database is required for the demo
 
 ---
 
