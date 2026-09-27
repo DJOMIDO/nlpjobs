@@ -110,10 +110,13 @@ is unavailable.
 
 ## Screenshots
 
-![Homepage](./screenshots/home.png)  
-![Job List](./screenshots/jobs.png)  
-![Job Details](./screenshots/job-details.png)  
-![Filters](./screenshots/filter.png)
+The latest interface is shown below. Older screenshots remain in the
+`screenshots/` directory for reference.
+
+![Homepage](./screenshots/home-latest.png)
+![Browse all jobs](./screenshots/jobs-latest.png)
+![Filters](./screenshots/filter-latest.png)
+![Job details](./screenshots/job-details-latest.png)
 
 ---
 
